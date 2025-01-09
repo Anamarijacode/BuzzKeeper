@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BuzzKeeper</string>
+    <string name="odaberi_j">Odaberi jezik</string>
+    <string name="btnZ">Započnimo</string>
+    <string name="kTV">Korisničko ime</string>
+    <string name="hintK">Unesite korisničko ime</string>
+    <string name="lTV">Lozinka</string>
+    <string name="hintL">Unesite lozinku</string>
+    <string name="btnP">Prijavi se</string>
+    <string name="linkReg">Nemate račun? Registrirajte se.</string>
+    <string name="menuOrganizator">Organizator</string>
+    <string name="menuForum">Forum</string>
+    <string name="menuEnciklopedija">Enskilopedija</string>
+    <string name="menuProfil">Profil</string>
+    <string name="linkLog">Imate račun? Prijavite se.</string>
+    <string name="tvEmail">E-mail</string>
+    <string name="hintEmail">Unesite E-mail</string>
+    <string name="tvPonovniUnos">Ponovni unos lozinke</string>
+    <string name="hintPonovniUnos">Ponovno unseite lozinku</string>
+    <string name="neuspjesna">Neuspješna prijava</string>
+    <string name="btnReg">Registriraj se</string>
+    <string name="croatian">Hrvatski</string>
+    <string name="english">Engleski</string>
+    <string name="uemail">Molimo unesite E-mail!</string>
+    <string name="ulozinka">Molimo unesite lozinku!</string>
+    <string name="emailError">Neispravan E-mail</string>
+    <string name="email_lozinka">Molimo unesite E-mail i lozinku!</string>
+    <string name="ime">Ime</string>
+    <string name="imeHint">Molimo unesite svoje ime</string>
+    <string name="prezime">Prezime</string>
+    <string name="prezimeHint">Molimo unesite svoje prezime</string>
+    <string name="hello_blank_fragment" translatable="false">Hej fragmente</string>
+    <string name="resetLozinka">Zaboravili ste lozinku?</string>
+    <string name="zabLozinka">Promjeni lozinku</string>
+    <string name="posaljibtn">Pošalji email za promjenu lozinke</string>
+</resources>

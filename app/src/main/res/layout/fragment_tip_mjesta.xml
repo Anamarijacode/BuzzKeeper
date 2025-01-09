@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:rowCount="3"
+    android:columnCount="2"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/livadaCheckBox"
+        android:text="Livada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/vocnjakCheckBox"
+        android:text="Voćnjak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/vrtCheckBox"
+        android:text="Vrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/sumaCheckBox"
+        android:text="Šuma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/vrhZgradeCheckBox"
+        android:text="Vrh zgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/primorskoPodrucjeCheckBox"
+        android:text="Primorsko područje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/brdaCheckBox"
+        android:text="Brda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:text="Spremi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</GridLayout>

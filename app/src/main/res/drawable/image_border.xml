@@ -1,0 +1,26 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Vanjski okvir sa svijetlom zelenom bojom -->
+    <solid android:color="#769267" /> <!-- Svijetla zelena pozadina (#A5D6A7) -->
+    <stroke
+        android:width="2dp"
+        android:color="#6c865e" /> <!-- Svijetlo tamnija zelena za obrub (#81C784) -->
+    <corners android:radius="12dp" /> <!-- Zaobljeni kutovi za 3D izgled -->
+    <padding
+        android:left="6dp"
+        android:top="6dp"
+        android:right="6dp"
+        android:bottom="6dp" /> <!-- Unutarnji razmak za bijeli okvir -->
+
+    <!-- Unutarnji bijeli okvir sa bijelim obrubom -->
+    <layer-list>
+        <item>
+            <shape>
+                <solid android:color="@android:color/white" /> <!-- Bijela unutrašnjost -->
+                <stroke
+                    android:width="2dp"
+                    android:color="#FFFFFF" /> <!-- Bijeli obrub za 3D efekt -->
+                <corners android:radius="10dp" /> <!-- Zaobljeni kutovi bijelog okvira -->
+            </shape>
+        </item>
+    </layer-list>
+</shape>

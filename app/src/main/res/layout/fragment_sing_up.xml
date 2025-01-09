@@ -1,0 +1,250 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.SingUpFragment"
+        android:id="@+id/fragment_container"
+        android:background="@drawable/prijava1"
+        >
+
+        <TextView
+            android:id="@+id/tvemailR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="148dp"
+            android:layout_marginEnd="320dp"
+            android:gravity="center"
+            android:text="@string/tvEmail"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etemailR"
+            android:layout_width="370dp"
+            android:layout_height="48dp"
+
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/spinner_background"
+            android:hint="@string/hintEmail"
+            android:padding="8dp"
+            android:popupBackground="@android:color/black"
+            android:spinnerMode="dropdown"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvemailR" />
+
+        <TextView
+            android:id="@+id/tvponovnalozinka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="233dp"
+            android:gravity="center"
+            android:text="@string/tvPonovniUnos"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etlozinkaR" />
+
+        <EditText
+            android:id="@+id/etponovnalozinka"
+            android:layout_width="370dp"
+            android:layout_height="48dp"
+
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/spinner_background"
+            android:hint="@string/hintPonovniUnos"
+            android:padding="8dp"
+            android:popupBackground="@android:color/black"
+            android:inputType="textPassword"
+            android:drawableEnd="@drawable/ic_visibility_off"
+            android:spinnerMode="dropdown"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvponovnalozinka" />
+
+        <TextView
+            android:id="@+id/tvlozinkaR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="313dp"
+            android:gravity="center"
+            android:text="@string/lTV"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etemailR" />
+
+        <EditText
+            android:id="@+id/etlozinkaR"
+            android:layout_width="370dp"
+            android:layout_height="48dp"
+
+            android:layout_marginStart="16dp"
+            android:inputType="textPassword"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/spinner_background"
+            android:hint="@string/hintL"
+            android:padding="8dp"
+            android:popupBackground="@android:color/black"
+            android:textColor="@android:color/black"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvlozinkaR"
+            android:drawableEnd="@drawable/ic_visibility_off"/>
+
+
+        <TextView
+            android:id="@+id/tvImeR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="288dp"
+            android:gravity="center"
+            android:text="@string/prezime"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPrezimeR" />
+
+        <EditText
+            android:id="@+id/etimeR"
+            android:layout_width="370dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/spinner_background"
+            android:hint="@string/prezimeHint"
+            android:padding="8dp"
+            android:popupBackground="@android:color/black"
+            android:textColor="@android:color/black"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvImeR" />
+
+        <TextView
+            android:id="@+id/tvPrezimeR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="326dp"
+            android:gravity="center"
+            android:text="@string/ime"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etponovnalozinka" />
+
+        <EditText
+            android:id="@+id/etPrezimeR"
+            android:layout_width="370dp"
+            android:layout_height="48dp"
+
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/spinner_background"
+            android:hint="@string/imeHint"
+            android:padding="8dp"
+            android:popupBackground="@android:color/black"
+            android:textColor="@android:color/black"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrezimeR" />
+
+        <Button
+            android:id="@+id/btnReg"
+            android:layout_width="317dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="47dp"
+            android:background="@drawable/button_d"
+            android:text="@string/btnReg"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#DFAF35"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etimeR" />
+
+        <TextView
+            android:id="@+id/tvLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="126dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:text="@string/linkLog"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnReg" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

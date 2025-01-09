@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "801451491972",
+    "firebase_url": "https://buzzkeeper-42287-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "buzzkeeper-42287",
+    "storage_bucket": "buzzkeeper-42287.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801451491972:android:d15f64a38ded3623b778d1",
+        "android_client_info": {
+          "package_name": "com.opgkukic.buzzkeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801451491972-ok0vt026cqqtnu5fte6uo3n7g5njmoqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTGrCFvSZqFXSgOkecBuYnIKnolkUpafk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801451491972-ok0vt026cqqtnu5fte6uo3n7g5njmoqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

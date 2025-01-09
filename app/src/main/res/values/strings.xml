@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">BuzzKeeper</string>
+    <string name="odaberi_j">Choose a language</string>
+    <string name="btnZ">Let\'s get started</string>
+    <string name="kTV">User name</string>
+    <string name="hintK">Enter a username</string>
+    <string name="lTV">Password</string>
+    <string name="hintL">Enter your password</string>
+    <string name="btnP">Log in</string>
+    <string name="linkReg">Don\'t have an account yet? Register.</string>
+    <string name="menuOrganizator">Organizer</string>
+    <string name="menuForum">Forum</string>
+    <string name="menuEnciklopedija">Encyclopedia</string>
+    <string name="menuProfil">Profile</string>
+    <string name="linkLog">Have an account? Sign up</string>
+    <string name="tvEmail">E-mail</string>
+    <string name="hintEmail">Enter E-mail</string>
+    <string name="tvPonovniUnos">Re-enter password</string>
+    <string name="hintPonovniUnos">Re-enter your password</string>
+    <string name="btnReg">Register</string>
+    <string name="croatian">Croatian</string>
+    <string name="english">English</string>
+    <string name="neuspjesna">Login failed</string>
+    <string name="uemail">Please enter an E-mail!</string>
+    <string name="ulozinka">Please enter a password!</string>
+    <string name="emailError">Invalid E-mail</string>
+
+    <string-array name="languages">
+        <item>@string/odaberi_j</item>
+        <item>@string/croatian</item>
+        <item>@string/english</item>
+    </string-array>
+    <string name="email_lozinka">Please enter your E-mail and password!</string>
+    <string name="ime">Name</string>
+    <string name="imeHint">Enter your name</string>
+    <string name="prezime">Last name</string>
+    <string name="prezimeHint">Enter your last name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="resetLozinka">Forgot your password?</string>
+    <string name="zabLozinka">Change password</string>
+    <string name="posaljibtn">Send an email to change your password</string>
+</resources>

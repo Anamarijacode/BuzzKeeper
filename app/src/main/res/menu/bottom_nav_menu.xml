@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/Organizator"
+    android:title="@string/menuOrganizator"
+    android:icon="@drawable/organizator"
+  />
+    <item android:id="@+id/Forum"
+    android:title="@string/menuForum"
+    android:icon="@drawable/forum"
+  />
+    <item
+        android:id="@+id/Fplaceholder"
+        android:title=""
+        />
+    <item android:id="@+id/Enciklopedija"
+    android:title="@string/menuEnciklopedija"
+    android:icon="@drawable/enciklopedija"
+  />
+    <item android:id="@+id/Profil"
+    android:title="@string/menuProfil"
+    android:icon="@drawable/account"
+  />
+</menu>
