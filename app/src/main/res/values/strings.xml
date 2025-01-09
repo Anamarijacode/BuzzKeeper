@@ -40,4 +40,6 @@
     <string name="resetLozinka">Forgot your password?</string>
     <string name="zabLozinka">Change password</string>
     <string name="posaljibtn">Send an email to change your password</string>
+    <string name="ovrstaPcelinjaka">Select the type of apiary</string>
+    <string name="otipMjesta">Select a location type</string>
 </resources>

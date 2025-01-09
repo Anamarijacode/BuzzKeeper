@@ -3,9 +3,11 @@ package com.opgkukic.buzzkeeper.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -15,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.opgkukic.buzzkeeper.R;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,11 +28,14 @@ import com.opgkukic.buzzkeeper.ui.fragments.ForumFragment;
 import com.opgkukic.buzzkeeper.ui.fragments.HomeFragment;
 import com.opgkukic.buzzkeeper.ui.fragments.OrganizatorFragment;
 import com.opgkukic.buzzkeeper.ui.fragments.ProfilFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.ResetPasswordFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.SingUpFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+    FloatingActionButton fabMid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
         FirebaseApp.initializeApp(this);
+        fabMid = findViewById(R.id.fab_middle);
 
         try {
             FirebaseApp.initializeApp(this);
@@ -62,9 +70,6 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.Forum:
                     selectedFragment = new ForumFragment();
                     break;
-                case R.id.fab_middle:
-                    selectedFragment= new HomeFragment();
-                    break;
                 case R.id.Enciklopedija:
                     selectedFragment = new EnciklopedijaFragment();
                     break;
@@ -80,6 +85,17 @@ public class HomeActivity extends AppCompatActivity {
             }
             return true;
         });
+       fabMid.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Fragment newFragment = new HomeFragment();
+               FragmentManager fragmentManager = getSupportFragmentManager();
+               FragmentTransaction transaction = fragmentManager.beginTransaction();
+               transaction.replace(R.id.fragment_container, newFragment);
+               transaction.addToBackStack(null);
+               transaction.commit();
+           }
+       });
 //
 //        RecyclerView recyclerView = findViewById(R.id.recyclerViewPcelinjaci);
 //        Log.d("HomeActivity", "Pozivam loadPcelinjaciFromFirebase metodu");

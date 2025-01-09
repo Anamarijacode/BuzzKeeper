@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
@@ -7,51 +9,114 @@
     android:columnCount="2"
     android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/livadaCheckBox"
-        android:text="Livada"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <CheckBox
-        android:id="@+id/vocnjakCheckBox"
-        android:text="Voćnjak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <CheckBox
-        android:id="@+id/vrtCheckBox"
-        android:text="Vrt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <CheckBox
-        android:id="@+id/sumaCheckBox"
-        android:text="Šuma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <CheckBox
-        android:id="@+id/vrhZgradeCheckBox"
-        android:text="Vrh zgrade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <CheckBox
-        android:id="@+id/primorskoPodrucjeCheckBox"
-        android:text="Primorsko područje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <CheckBox
-        android:id="@+id/brdaCheckBox"
-        android:text="Brda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/submitButton"
-        android:text="Spremi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</GridLayout>
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="7"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Spremi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageLivada"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageVrt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/imageVoćnjak"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageŠuma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/imageVrt"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageVrhZgrade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLivada"
+        app:srcCompat="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/imageŠuma"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/PrimorskoPodručje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageVoćnjak"
+        app:srcCompat="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/imageVrhZgrade"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageBrda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageVrt"
+        app:srcCompat="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/PrimorskoPodručje"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageOstalo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageŠuma"
+        app:srcCompat="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/imageBrda"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/submitButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageVrhZgrade"
+        app:srcCompat="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/imageOstalo"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/submitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PrimorskoPodručje"
+        app:srcCompat="@drawable/account" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,4 +34,6 @@
     <string name="resetLozinka">Zaboravili ste lozinku?</string>
     <string name="zabLozinka">Promjeni lozinku</string>
     <string name="posaljibtn">Pošalji email za promjenu lozinke</string>
+    <string name="ovrstaPcelinjaka">Odaberite tip pčelinjaka</string>
+    <string name="otipMjesta">Odaberite tip mjesta</string>
 </resources>

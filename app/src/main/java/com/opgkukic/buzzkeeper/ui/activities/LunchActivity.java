@@ -3,6 +3,7 @@ package com.opgkukic.buzzkeeper.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -19,9 +20,20 @@ public class LunchActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+                boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+                if(isLoggedIn)
+                {
+                    Intent intent = new Intent(LunchActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+                else
+                {
                 Intent intent = new Intent(LunchActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
+                finish();}
             }
         }, 2000);
 
