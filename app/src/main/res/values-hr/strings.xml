@@ -30,10 +30,19 @@
     <string name="imeHint">Molimo unesite svoje ime</string>
     <string name="prezime">Prezime</string>
     <string name="prezimeHint">Molimo unesite svoje prezime</string>
-    <string name="hello_blank_fragment" translatable="false">Hej fragmente</string>
     <string name="resetLozinka">Zaboravili ste lozinku?</string>
     <string name="zabLozinka">Promjeni lozinku</string>
     <string name="posaljibtn">Pošalji email za promjenu lozinke</string>
     <string name="ovrstaPcelinjaka">Odaberite tip pčelinjaka</string>
     <string name="otipMjesta">Odaberite tip mjesta</string>
+    <string name="dPcelinjak">Dodaj pčelinjak</string>
+    <string name="nPcelinjak">Naziv pčelinjaka</string>
+    <string name="unPcelinjak">Unesite naziv pčelinjaka</string>
+    <string name="dkPcelinjak">Datum osnivanja pčeljinaka</string>
+    <string name="aPcelinjak">Adresa</string>
+    <string name="uaPcelinjak">Unesite adresu</string>
+    <string name="lonPcelinjak">Longituda</string>
+    <string name="latPcelinjak">Latituda</string>
+    <string name="locPcelinjak">Lociraj me</string>
+    <string name="udoPcelinjak">Unesite datum</string>
 </resources>

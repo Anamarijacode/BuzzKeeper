@@ -42,4 +42,14 @@
     <string name="posaljibtn">Send an email to change your password</string>
     <string name="ovrstaPcelinjaka">Select the type of apiary</string>
     <string name="otipMjesta">Select a location type</string>
+    <string name="dPcelinjak">Add apiary</string>
+    <string name="nPcelinjak">Name of the apiary</string>
+    <string name="unPcelinjak">Enter the name of the apiary</string>
+    <string name="dkPcelinjak">Creation date od apiary</string>
+    <string name="aPcelinjak">Address</string>
+    <string name="uaPcelinjak">Enter the address</string>
+    <string name="lonPcelinjak">Longitude</string>
+    <string name="latPcelinjak">Latitude</string>
+    <string name="locPcelinjak">Locate me</string>
+    <string name="udoPcelinjak">Enter the date</string>
 </resources>

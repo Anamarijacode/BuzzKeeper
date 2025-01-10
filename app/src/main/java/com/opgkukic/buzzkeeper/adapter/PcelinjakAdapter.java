@@ -38,7 +38,7 @@ public class PcelinjakAdapter extends RecyclerView.Adapter<PcelinjakAdapter.Pcel
         holder.nazivTextView.setText(pcelinjak.getNazivPčelinjaka());
         // Postavljanje slike na temelju tipa pčelinjaka
         if ("stacionar".equalsIgnoreCase(pcelinjak.getTipPčelinjaka())) {
-            holder.pcelinjakImageView.setImageResource(R.drawable.stacionar); // Ikonica za stacionar
+            holder.pcelinjakImageView.setImageResource(R.drawable.kosnica); // Ikonica za stacionar
         } else if ("pokretni".equalsIgnoreCase(pcelinjak.getTipPčelinjaka())) {
             holder.pcelinjakImageView.setImageResource(R.drawable.pokretni); // Ikonica za pokretni
         }

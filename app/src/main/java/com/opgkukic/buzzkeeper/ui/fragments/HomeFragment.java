@@ -3,6 +3,8 @@ package com.opgkukic.buzzkeeper.ui.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +38,7 @@ private static final String TAG = "HomeFragment";
     private RecyclerView recyclerView;
     private PcelinjakAdapter adapter;
     private List<Pčelinjak> pcelinjaciList;
+    private FloatingActionButton dodajPcelinjak;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +50,18 @@ private static final String TAG = "HomeFragment";
         pcelinjaciList = new ArrayList<>();
         adapter = new PcelinjakAdapter(pcelinjaciList);
         recyclerView.setAdapter(adapter);
+        dodajPcelinjak =view.findViewById(R.id.fab_add);
+        dodajPcelinjak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment newFragment = new DodajPcelinjakFragment();
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.fragment_container, newFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
         ReadData();
         return view;
