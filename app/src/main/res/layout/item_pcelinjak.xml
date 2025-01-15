@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/pokretni" />
+        tools:srcCompat="@drawable/pokretan" />
 
     <TextView
         android:id="@+id/nazivPcelinjakaTextView"

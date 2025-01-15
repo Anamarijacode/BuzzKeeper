@@ -40,7 +40,7 @@ public class PcelinjakAdapter extends RecyclerView.Adapter<PcelinjakAdapter.Pcel
         if ("stacionar".equalsIgnoreCase(pcelinjak.getTipPčelinjaka())) {
             holder.pcelinjakImageView.setImageResource(R.drawable.kosnica); // Ikonica za stacionar
         } else if ("pokretni".equalsIgnoreCase(pcelinjak.getTipPčelinjaka())) {
-            holder.pcelinjakImageView.setImageResource(R.drawable.pokretni); // Ikonica za pokretni
+            holder.pcelinjakImageView.setImageResource(R.drawable.pokretan); // Ikonica za pokretni
         }
     }
 

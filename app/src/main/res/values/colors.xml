@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pokretniBackground">#FFEB3B</color>
     <color name="stacionarniBackground">#8BC34A</color>
+    <color name="selected_border_color">#FF5722</color>
+
 
 </resources>

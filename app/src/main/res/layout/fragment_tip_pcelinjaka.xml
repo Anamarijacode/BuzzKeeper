@@ -7,47 +7,35 @@
     tools:context=".ui.fragments.TipPcelinjakaFragment">
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="366dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="50dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/stacionarp"
         android:layout_width="317dp"
         android:layout_height="257dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/forum"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        android:src="@drawable/kosnica"
+        app:layout_constraintBottom_toTopOf="@+id/pokretnip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/kosnica" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/pokretnip"
         android:layout_width="316dp"
         android:layout_height="270dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/account"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:src="@drawable/pokretan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/stacionarp"
+       />
 
     <TextView
         android:id="@+id/textView3"
@@ -58,7 +46,7 @@
         android:layout_marginEnd="215dp"
         android:layout_marginBottom="8dp"
         android:text="@string/ovrstaPcelinjaka"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/stacionarp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

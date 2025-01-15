@@ -1,38 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/novi">
+
 
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="386dp"
-        android:layout_height="227dp" />
-
+        android:layout_height="227dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="151dp" />
 
     <EditText
         android:id="@+id/adresaEditText"
-        android:hint="Adresa"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Adresa"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="407dp" />
 
     <EditText
         android:id="@+id/latitudeEditText"
-        android:hint="Latitude"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Latitude"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="557dp" />
 
     <EditText
         android:id="@+id/longitudeEditText"
-        android:hint="Longitude"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Longitude"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="485dp" />
 
     <Button
         android:id="@+id/nextButton2"
-        android:text="Nastavi dalje"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_width="386dp"
+        android:layout_height="47dp"
+        android:text="Lociraj me"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="620dp" />
+
+    <TextView
+        android:id="@+id/tdodajP"
+        android:layout_width="260dp"
+        android:layout_height="36dp"
+        android:text="@string/dPcelinjak"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:drawableTint="#7E3535"
+        app:fontFamily="@font/actor"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="683dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
