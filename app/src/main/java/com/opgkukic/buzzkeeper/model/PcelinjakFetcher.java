@@ -24,15 +24,7 @@ public class PcelinjakFetcher {
                     }
                 }
 
-                // Ispis svih pčelinjaka
-                for (Pčelinjak p : pcelinjaci) {
-                    System.out.println("Naziv pčelinjaka: " + p.getNazivPčelinjaka());
-                    System.out.println("Lokacija: " + p.getLokacija());
-                    System.out.println("Datum kreiranja: " + p.getDatumKreiranja());
-                    System.out.println("Tip mjesta: " + p.getTipMjesta());
-                    System.out.println("Tip pčelinjaka: " + p.getTipPčelinjaka());
-                    System.out.println("---------------");
-                }
+
             }
 
             @Override

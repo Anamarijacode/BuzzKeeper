@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +37,7 @@ public class HomeFragment extends Fragment {
 
 private static final String TAG = "HomeFragment";
     private DatabaseReference mDatabase;
+    private FirebaseAuth auth;
     private RecyclerView recyclerView;
     private PcelinjakAdapter adapter;
     private List<Pčelinjak> pcelinjaciList;
@@ -51,6 +54,8 @@ private static final String TAG = "HomeFragment";
         adapter = new PcelinjakAdapter(pcelinjaciList);
         recyclerView.setAdapter(adapter);
         dodajPcelinjak =view.findViewById(R.id.fab_add);
+        auth = FirebaseAuth.getInstance();
+
         dodajPcelinjak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +73,8 @@ private static final String TAG = "HomeFragment";
     }
 
     private void ReadData() {
+        FirebaseUser user = auth.getCurrentUser();
+        String userId = user.getUid();
         DatabaseReference pcelinjaci = mDatabase.child("pcelinjaci");
         pcelinjaci.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,9 +82,16 @@ private static final String TAG = "HomeFragment";
                 pcelinjaciList.clear();
                 for (DataSnapshot pcelinjaciSnapshot : snapshot.getChildren()) {
                     Pčelinjak pcelinjak = pcelinjaciSnapshot.getValue(Pčelinjak.class);
-                    if (pcelinjak != null) {
-                        pcelinjaciList.add(pcelinjak);
-                    }
+                    Log.d("pcelinjakUser", "user" + pcelinjak.getUserId());
+                    Log.d("pcelinjakUser", "user" + userId);
+
+                            if (pcelinjak != null) {
+                                if(userId.equals(pcelinjak.getUserId())) {
+                                    pcelinjaciList.add(pcelinjak);
+                                }
+                            }
+
+
                 }
                 adapter.notifyDataSetChanged();
             }

@@ -6,63 +6,146 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
    >
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/novi">
 
-
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="386dp"
-        android:layout_height="227dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="151dp" />
-
-    <EditText
-        android:id="@+id/adresaEditText"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Adresa"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="407dp" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/latitudeEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Latitude"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="557dp" />
 
-    <EditText
-        android:id="@+id/longitudeEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Longitude"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="485dp" />
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="379dp"
+            android:layout_height="363dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="23dp"
+            app:layout_constraintBottom_toTopOf="@+id/tdodajAdresu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tLokacijap" />
 
-    <Button
-        android:id="@+id/nextButton2"
-        android:layout_width="386dp"
-        android:layout_height="47dp"
-        android:text="Lociraj me"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="620dp" />
+        <EditText
+            android:id="@+id/adresaEditText"
+            android:layout_width="373dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/image_border"
+            android:color="@color/white"
+            android:hint="Adresa"
+            app:layout_constraintBottom_toTopOf="@+id/tlongituda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tdodajAdresu" />
 
-    <TextView
-        android:id="@+id/tdodajP"
-        android:layout_width="260dp"
-        android:layout_height="36dp"
-        android:text="@string/dPcelinjak"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:drawableTint="#7E3535"
-        app:fontFamily="@font/actor"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="683dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/latitudeEditText"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/image_border"
+            android:color="@color/white"
+            android:hint="Latitude"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/longitudeEditText"
+            app:layout_constraintTop_toBottomOf="@+id/tlatituda" />
+
+        <EditText
+            android:id="@+id/longitudeEditText"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/image_border"
+            android:color="@color/white"
+            android:hint="Longitude"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/latitudeEditText"
+            app:layout_constraintHorizontal_bias="0.294"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tlongituda" />
+
+        <TextView
+            android:id="@+id/tLokacijap"
+            android:layout_width="260dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="139dp"
+            android:text="dodaJnApRIJVOD"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintBottom_toTopOf="@+id/map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tdodajAdresu"
+            android:layout_width="346dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginBottom="2dp"
+            android:text="Adresa"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintBottom_toTopOf="@+id/adresaEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map" />
+
+        <TextView
+            android:id="@+id/tlongituda"
+            android:layout_width="178dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="10dp"
+            android:text="Longituda"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintEnd_toStartOf="@+id/tlatituda"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adresaEditText" />
+
+        <TextView
+            android:id="@+id/tlatituda"
+            android:layout_width="168dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="2dp"
+            android:text="Latituda"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:drawableTint="#7E3535"
+            app:fontFamily="@font/actor"
+            app:layout_constraintBottom_toTopOf="@+id/latitudeEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tlongituda"
+            app:layout_constraintTop_toBottomOf="@+id/adresaEditText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

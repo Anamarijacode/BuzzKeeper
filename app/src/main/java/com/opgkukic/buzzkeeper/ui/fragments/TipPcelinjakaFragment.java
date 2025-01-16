@@ -1,5 +1,7 @@
 package com.opgkukic.buzzkeeper.ui.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,16 +29,43 @@ public class TipPcelinjakaFragment extends Fragment {
         pokretnip = view.findViewById(R.id.pokretnip);
         databaseReference = FirebaseDatabase.getInstance().getReference("pcelinjaci");
 
-        stacionarp.setOnClickListener(v -> saveTipPcelinjaka("stacionar"));
-        pokretnip.setOnClickListener(v -> saveTipPcelinjaka("pokretni"));
+        stacionarp.setOnClickListener(v ->
+                updateSelection(v));
+        pokretnip.setOnClickListener(v ->
+                updateSelection(v));
 
         return view;
     }
 
-    private void saveTipPcelinjaka(String tip) {
-        String pcelinjakId = "pcelinjak3"; // ID odabranog pčelinjaka
-        databaseReference.child(pcelinjakId).child("tipPcelinjaka").setValue(tip)
-                .addOnSuccessListener(aVoid -> Toast.makeText(getContext(), "Tip pčelinjaka spremljen!", Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(e -> Toast.makeText(getContext(), "Greška pri spremanju.", Toast.LENGTH_SHORT).show());
+//    private void saveTipPcelinjaka(String tip) {
+//        String pcelinjakId = "pcelinjak3"; // ID odabranog pčelinjaka
+//        databaseReference.child(pcelinjakId).child("tipPcelinjaka").setValue(tip)
+//                .addOnSuccessListener(aVoid -> Toast.makeText(getContext(), "Tip pčelinjaka spremljen!", Toast.LENGTH_SHORT).show())
+//                .addOnFailureListener(e -> Toast.makeText(getContext(), "Greška pri spremanju.", Toast.LENGTH_SHORT).show());
+//    }
+
+    private void updateSelection(View selectedView)
+    {
+        resetImageSizeAndBorders();
+        ImageView selectedImage = (ImageView) selectedView;
+        selectedImage.setScaleX(0.98f);
+        selectedImage.setScaleY(0.98f);
+        selectedImage.setBackgroundResource(R.drawable.image_border);
     }
+    private void resetImageSizeAndBorders()
+    {
+        int [] imageViewsIds=
+                {
+                        R.id.pokretnip,
+                        R.id.stacionarp,
+                };
+        for(int id: imageViewsIds)
+        {
+            ImageView imageView= requireView().findViewById(id);
+            imageView.setScaleX(1f);
+            imageView.setScaleY(1f);
+            imageView.setBackgroundResource(0);
+        }
+    }
+
 }

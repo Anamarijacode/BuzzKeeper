@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageVrt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"/>
 
     <ImageView
         android:id="@+id/imageVoćnjak"
@@ -48,7 +48,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageŠuma"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"/>
 
     <ImageView
         android:id="@+id/imageVrt"
@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageVrhZgrade"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageLivada"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"/>
 
     <ImageView
         android:id="@+id/imageŠuma"
@@ -74,7 +74,7 @@
         app:layout_constraintBottom_toTopOf="@+id/PrimorskoPodručje"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageVoćnjak"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"/>
 
     <ImageView
         android:id="@+id/imageVrhZgrade"
@@ -87,7 +87,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageBrda"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageVrt"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"/>
 
     <ImageView
         android:id="@+id/PrimorskoPodručje"
@@ -100,7 +100,8 @@
         app:layout_constraintBottom_toTopOf="@+id/imageOstalo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageŠuma"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"
+        />
 
     <ImageView
         android:id="@+id/imageBrda"

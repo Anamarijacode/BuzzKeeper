@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,15 +19,25 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.opgkukic.buzzkeeper.R;
+import com.opgkukic.buzzkeeper.model.User;
 import com.opgkukic.buzzkeeper.ui.activities.HomeActivity;
+
+import java.util.Date;
+import java.util.Locale;
 
 public class SingUpFragment extends Fragment {
 
 
-private FirebaseAuth auth;
-private Button btnReg;
-private EditText imeR, prezimeR, emailR, lozinkaR, ponovnalozinkaR;
+    private static final String TAG = "nesto";
+    private FirebaseAuth auth;
+    private Button btnReg;
+    private EditText imeR, prezimeR, emailR, lozinkaR, ponovnalozinkaR;
+    private String datumKreiranja, odabraniJezik;
+    private DatabaseReference mDatabase;
     private boolean isVisible = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +49,7 @@ private EditText imeR, prezimeR, emailR, lozinkaR, ponovnalozinkaR;
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sing_up, container, false);
         auth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference("users");
         imeR = view.findViewById(R.id.etimeR);
         prezimeR = view.findViewById(R.id.etPrezimeR);
         emailR = view.findViewById(R.id.etemailR);
@@ -92,20 +104,47 @@ private EditText imeR, prezimeR, emailR, lozinkaR, ponovnalozinkaR;
     }
     public void registerNeUser()
     {
-        String email, lozinka, ime, prezime;
-        email = emailR.getText().toString();
+        String email1, lozinka, ime1, prezime1;
+        email1 = emailR.getText().toString();
         lozinka = lozinkaR.getText().toString();
-        ime= imeR.getText().toString();
-        prezime = prezimeR.getText().toString();
-       if(!email.isEmpty() && !lozinka.isEmpty() && !ime.isEmpty() && !prezime.isEmpty())
+        ime1= imeR.getText().toString();
+        prezime1 = prezimeR.getText().toString();
+        Date objDate = new Date();
+        datumKreiranja = objDate.toString();
+        if(requireContext().getResources().getConfiguration().getLocales().get(0).getLanguage() == "")
+        {
+            odabraniJezik = "en";
+        }
+        else
+        {
+            odabraniJezik = requireContext().getResources().getConfiguration().getLocales().get(0).getLanguage();
+        }
+        Log.d(TAG, "registerNeUser: " + odabraniJezik);
+       if(!email1.isEmpty() && !lozinka.isEmpty() && !ime1.isEmpty() && !prezime1.isEmpty())
        {
-           auth.createUserWithEmailAndPassword(email, lozinka).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+           auth.createUserWithEmailAndPassword(email1, lozinka).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                @Override
                public void onComplete(Task<AuthResult> task) {
                    if(task.isSuccessful())
                    {
-                       startActivity(new Intent(getContext(), HomeActivity.class));
-                       requireActivity().finish();
+                       FirebaseUser user = auth.getCurrentUser();
+                       if(user != null)
+                       {
+                           String userId = user.getUid();
+                           User newUser = new User(datumKreiranja, email1, ime1, "", odabraniJezik, prezime1, "", "");
+                           mDatabase.child(userId).setValue(newUser).addOnCompleteListener(dbTask ->
+                           {
+                               if (dbTask.isSuccessful())
+                               {
+                                   startActivity(new Intent(getContext(), HomeActivity.class));
+                                   requireActivity().finish();
+                               }
+                               else
+                               {
+                                   Toast.makeText(getContext(), "Neuspješna registracija registracija", Toast.LENGTH_SHORT).show();
+                               }
+                           });
+                       }
                    }
                    else
                    {
