@@ -13,12 +13,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
 import com.opgkukic.buzzkeeper.R;
+import com.opgkukic.buzzkeeper.model.SharedViewModel;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class TipPcelinjakaFragment extends Fragment {
     private ImageView stacionarp, pokretnip;
     private DatabaseReference databaseReference;
+    private SharedViewModel sharedViewModel;
+    private String odabrani;
 
     @Nullable
     @Override
@@ -34,6 +37,7 @@ public class TipPcelinjakaFragment extends Fragment {
         pokretnip.setOnClickListener(v ->
                 updateSelection(v));
 
+        sharedViewModel.setTipPcelinjaka(odabrani);
         return view;
     }
 
@@ -51,6 +55,14 @@ public class TipPcelinjakaFragment extends Fragment {
         selectedImage.setScaleX(0.98f);
         selectedImage.setScaleY(0.98f);
         selectedImage.setBackgroundResource(R.drawable.image_border);
+        if(selectedView.equals(R.id.stacionarp))
+        {
+            odabrani ="stacionar";
+        }
+        else if(selectedView.equals(R.id.pokretnip))
+        {
+            odabrani="pokreni";
+        }
     }
     private void resetImageSizeAndBorders()
     {

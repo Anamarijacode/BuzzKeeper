@@ -1,7 +1,11 @@
 package com.opgkukic.buzzkeeper.ui.fragments;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -42,6 +46,7 @@ private static final String TAG = "HomeFragment";
     private PcelinjakAdapter adapter;
     private List<Pčelinjak> pcelinjaciList;
     private FloatingActionButton dodajPcelinjak;
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +74,16 @@ private static final String TAG = "HomeFragment";
         });
 
         ReadData();
+        enableMyLocation();
         return view;
+    }
+    private void enableMyLocation() {
+        if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(requireActivity(),
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},LOCATION_PERMISSION_REQUEST_CODE);
+        };
+
     }
 
     private void ReadData() {

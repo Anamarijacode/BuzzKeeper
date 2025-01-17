@@ -2,6 +2,9 @@ package com.opgkukic.buzzkeeper.ui.fragments;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +14,13 @@ import android.widget.Toast;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
 import com.opgkukic.buzzkeeper.R;
 import com.opgkukic.buzzkeeper.model.PcelinjakDataHolder;
+import com.opgkukic.buzzkeeper.model.SharedViewModel;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
@@ -27,12 +32,14 @@ public class NazivFragment extends Fragment {
     private EditText nazivEditText, datumEditText;
     private Button submitButton;
     private DatabaseReference databaseReference;
+    private SharedViewModel sharedViewModel;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_naziv, container, false);
         datumEditText = view.findViewById(R.id.datumKreiranjaEditText);
+        nazivEditText= view.findViewById(R.id.nazivPcelinjakaEditText);
         String currentDate = getCurrentDate();
         datumEditText.setText(currentDate);
         MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();
@@ -51,6 +58,40 @@ public class NazivFragment extends Fragment {
                 String date = sdf.format(new Date(selection));
                 datumEditText.setText(date);
 
+            }
+        });
+        nazivEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable)
+            {
+                sharedViewModel.setNazivPčelinjaka(editable.toString());
+
+            }
+        });
+        datumEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                sharedViewModel.setDatumKreiranja(editable.toString());
             }
         });
 

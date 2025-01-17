@@ -15,6 +15,7 @@
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
+            tools:context="com.example.currentplacedetailsonmap.MapsActivityCurrentPlace"
             android:layout_width="379dp"
             android:layout_height="363dp"
             android:layout_marginStart="19dp"
@@ -25,10 +26,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tLokacijap" />
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/adresaEditText"
-            android:layout_width="373dp"
-            android:layout_height="45dp"
+            android:layout_width="382dp"
+            android:layout_height="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="22dp"
@@ -52,6 +53,7 @@
             android:background="@drawable/image_border"
             android:color="@color/white"
             android:hint="Latitude"
+            android:focusable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/longitudeEditText"
@@ -67,6 +69,7 @@
             android:background="@drawable/image_border"
             android:color="@color/white"
             android:hint="Longitude"
+            android:focusable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/latitudeEditText"
             app:layout_constraintHorizontal_bias="0.294"

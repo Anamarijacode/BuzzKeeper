@@ -1,29 +1,29 @@
 package com.opgkukic.buzzkeeper.model;
 
 public class Lokacija {
-    private double latitude;
-    private double longitude;
+    private String latitude;
+    private String longitude;
 
     // Konstruktor
-    public Lokacija(double latitude, double longitude) {
+    public Lokacija(String latitude, String longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
     // Getteri i setteri (potrebni za Firebase)
-    public double getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 

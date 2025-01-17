@@ -1,10 +1,14 @@
 package com.opgkukic.buzzkeeper.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,5 +43,6 @@ public class MainActivity extends AppCompatActivity  {
         transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
     }
+
 
 }
