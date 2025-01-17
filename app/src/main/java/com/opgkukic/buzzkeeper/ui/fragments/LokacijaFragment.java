@@ -12,6 +12,7 @@ import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -77,6 +78,7 @@ public class LokacijaFragment extends Fragment implements GoogleMap.OnMyLocation
         latitude = view.findViewById(R.id.latitudeEditText);
         longitude = view.findViewById(R.id.longitudeEditText);
         addresField = view.findViewById(R.id.adresaEditText);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         SupportMapFragment mapFragment = (SupportMapFragment) this.getChildFragmentManager()
                 .findFragmentById(R.id.map);

@@ -2,6 +2,7 @@ package com.opgkukic.buzzkeeper.ui.fragments;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -40,6 +41,7 @@ public class NazivFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_naziv, container, false);
         datumEditText = view.findViewById(R.id.datumKreiranjaEditText);
         nazivEditText= view.findViewById(R.id.nazivPcelinjakaEditText);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         String currentDate = getCurrentDate();
         datumEditText.setText(currentDate);
         MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();

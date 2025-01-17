@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,6 +49,7 @@ public class TipMjestaFragment extends Fragment {
         spremiPcelinjak = view.findViewById(R.id.dodajPcelinjak);
         auth = FirebaseAuth.getInstance();
         language = requireContext().getResources().getConfiguration().getLocales().get(0).getLanguage();
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         if(requireContext().getResources().getConfiguration().getLocales().get(0).getLanguage() == "")
         {
             Log.d("prijevodU tipumjesta", "onCreateView: en ");
