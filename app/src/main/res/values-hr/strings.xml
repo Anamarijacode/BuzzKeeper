@@ -45,4 +45,6 @@
     <string name="latPcelinjak">Latituda</string>
     <string name="locPcelinjak">Lociraj me</string>
     <string name="udoPcelinjak">Unesite datum</string>
+    <string name="open_drawer">Otvori</string>
+    <string name="close_drawer">Zatvori</string>
 </resources>

@@ -27,8 +27,7 @@ import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 public class DodajPcelinjakFragment extends Fragment {
 
     public ViewPager2 viewPager;
-    //private PcelinjakPagerAdapter pagerAdapter;
-    private Button nextButton;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,38 +38,9 @@ public class DodajPcelinjakFragment extends Fragment {
         viewPager2.setAdapter(adapter);
         wormDotsIndicator.setViewPager2(viewPager2);
 
-//        viewPager = view.findViewById(R.id.viewPager);
-//        nextButton = view.findViewById(R.id.nextButton);
-//
-//        pagerAdapter = new PcelinjakPagerAdapter(this);
-//        viewPager.setAdapter(pagerAdapter);
-//
-//        nextButton.setOnClickListener(v -> {
-//            if (viewPager.getCurrentItem() < pagerAdapter.getItemCount() - 1) {
-//                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-//            } else {
-//                savePcelinjak();
-//            }
-//        });
 
         return view;
     }
 
-//    private void savePcelinjak() {
-//        // Firebase spremanje na kraju svih koraka
-//        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("pcelinjaci");
-//        String id = mDatabase.push().getKey();
-//
-//        Pčelinjak pcelinjak = new Pčelinjak(
-//                PcelinjakDataHolder.nazivPcelinjaka,
-//                new Lokacija(PcelinjakDataHolder.latitude, PcelinjakDataHolder.longitude),
-//                PcelinjakDataHolder.tipMjesta,
-//                PcelinjakDataHolder.tipPcelinjaka,
-//                "userId1"
-//        );
-//        if (id != null) {
-//            mDatabase.child(id).setValue(pcelinjak);
-//            Toast.makeText(getContext(), "Pčelinjak uspješno dodat!", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+
 }

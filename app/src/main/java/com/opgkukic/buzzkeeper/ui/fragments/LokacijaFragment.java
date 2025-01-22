@@ -60,7 +60,6 @@ public class LokacijaFragment extends Fragment implements GoogleMap.OnMyLocation
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
-    private boolean permissionDenied = false;
 
     private GoogleMap map;
     private EditText longitude,latitude;

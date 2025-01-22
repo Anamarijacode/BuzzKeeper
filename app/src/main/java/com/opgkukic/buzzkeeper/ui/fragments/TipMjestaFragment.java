@@ -1,6 +1,7 @@
 package com.opgkukic.buzzkeeper.ui.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -26,6 +27,8 @@ import com.opgkukic.buzzkeeper.R;
 import com.opgkukic.buzzkeeper.model.Lokacija;
 import com.opgkukic.buzzkeeper.model.Pčelinjak;
 import com.opgkukic.buzzkeeper.model.SharedViewModel;
+import com.opgkukic.buzzkeeper.ui.activities.HomeActivity;
+import com.opgkukic.buzzkeeper.ui.activities.LunchActivity;
 
 import java.util.Locale;
 
@@ -37,16 +40,17 @@ public class TipMjestaFragment extends Fragment {
     private Button spremiPcelinjak;
     private SharedViewModel sharedViewModel;
     private String naziv, datum,adresa,longituda,latituda,tipPcelinjaka,tipMjestaPcelinjaka;
-    private FirebaseDatabase mDatabase;
+
     private Lokacija lokacija;
     private FirebaseAuth auth;
-    private DatabaseReference databaseReference = mDatabase.getReference("pcelinjaci");
+    private DatabaseReference mDatabase;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tip_mjesta, container, false);
         spremiPcelinjak = view.findViewById(R.id.dodajPcelinjak);
+        mDatabase = FirebaseDatabase.getInstance().getReference("pcelinjaci");
         auth = FirebaseAuth.getInstance();
         language = requireContext().getResources().getConfiguration().getLocales().get(0).getLanguage();
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
@@ -63,14 +67,14 @@ public class TipMjestaFragment extends Fragment {
         setupImageView(view, R.id.PrimorskoPodručje, "primorsko_podrucje", "coastal_area");
         setupImageView(view, R.id.imageBrda, "brda", "hills");
         setupImageView(view, R.id.imageOstalo, "ostalo", "the_rest");
-        sharedViewModel.setTipMjestaPcelinjaka(odabranoMjesto);
-        naziv = sharedViewModel.getNazivPčelinjaka().toString();
-        datum=sharedViewModel.getDatumKreiranja().toString();
-        adresa=sharedViewModel.getAdresa().toString();
-        latituda=sharedViewModel.getLatituda().toString();
-        longituda=sharedViewModel.getLongituda().toString();
-        tipPcelinjaka=sharedViewModel.getTipPcelinjaka().toString();
-        tipMjestaPcelinjaka=sharedViewModel.getTipMjestaPcelinjaka().toString();
+
+        naziv = sharedViewModel.getNazivPčelinjaka().getValue();
+        datum = sharedViewModel.getDatumKreiranja().getValue();
+        adresa = sharedViewModel.getAdresa().getValue();
+        latituda = sharedViewModel.getLatituda().getValue();
+        longituda = sharedViewModel.getLongituda().getValue();
+        tipPcelinjaka = sharedViewModel.getTipPcelinjaka().getValue();
+        tipMjestaPcelinjaka = sharedViewModel.getTipMjestaPcelinjaka().getValue();
         lokacija= new Lokacija(latituda,longituda);
         FirebaseUser user = auth.getCurrentUser();
         String userId = user.getUid();
@@ -78,16 +82,20 @@ public class TipMjestaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Pčelinjak pcelinjak = new Pčelinjak(datum, lokacija, naziv, tipMjestaPcelinjaka, tipPcelinjaka, userId);
-                databaseReference.push().setValue(pcelinjak).addOnCompleteListener(dbTask ->
+                Log.d("Pčelinjak", "Naziv: " + naziv);
+                Log.d("Pčelinjak", "Datum: " + datum);
+                Log.d("Pčelinjak", "Adresa: " + adresa);
+                Log.d("Pčelinjak", "Latituda: " + latituda);
+                Log.d("Pčelinjak", "Longituda: " + longituda);
+                Log.d("Pčelinjak", "TipPčelinjaka: " + tipPcelinjaka);
+                Log.d("Pčelinjak", "TipMjesta: " + tipMjestaPcelinjaka);
+
+                mDatabase.push().setValue(pcelinjak).addOnCompleteListener(dbTask ->
                 {
                     if(dbTask.isSuccessful())
                     {
-                        Fragment newFragment = new HomeFragment();
-                        FragmentManager fragmentManager = getParentFragmentManager();
-                        FragmentTransaction transaction = fragmentManager.beginTransaction();
-                        transaction.replace(R.id.fragment_container, newFragment);
-                        transaction.addToBackStack(null);
-                        transaction.commit();
+                        Intent intent = new Intent(requireContext(), HomeActivity.class);
+                        startActivity(intent);
                     }
                     else
                     {
@@ -107,8 +115,10 @@ public class TipMjestaFragment extends Fragment {
 
         imageView.setOnClickListener(v -> {
             saveSelectedPlace(resourceNameHr);
+            sharedViewModel.setTipMjestaPcelinjaka(resourceNameHr);
             updateSelection(v);
         });
+
     }
 private void updateSelection(View selectedView)
 {
@@ -140,7 +150,7 @@ private void resetImageSizeAndBorders()
     }
 }
     private int getDrawableIdForLanguage(String resourceNameHr, String resourceNameEn) {
-        // Odabir imena resursa na temelju jezika
+
         String resourceName = language.equals("hr") ? resourceNameHr : resourceNameEn;
         return getResources().getIdentifier(resourceName, "drawable", requireContext().getPackageName());
     }
@@ -150,8 +160,6 @@ private void resetImageSizeAndBorders()
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(SELECTED_PLACE_KEY, selectedPlace);
         editor.apply();
-        odabranoMjesto = selectedPlace;
-
     }
 
     @Nullable

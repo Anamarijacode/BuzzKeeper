@@ -56,7 +56,7 @@ private static final String TAG = "HomeFragment";
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         pcelinjaciList = new ArrayList<>();
-        adapter = new PcelinjakAdapter(pcelinjaciList);
+        adapter = new PcelinjakAdapter(pcelinjaciList, this);
         recyclerView.setAdapter(adapter);
         dodajPcelinjak =view.findViewById(R.id.fab_add);
         auth = FirebaseAuth.getInstance();

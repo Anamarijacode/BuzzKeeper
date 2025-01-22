@@ -10,8 +10,8 @@
 
     <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
         android:id="@+id/dots_indicator"
-        android:layout_width="346dp"
-        android:layout_height="23dp"
+        android:layout_width="347dp"
+        android:layout_height="20dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="9dp"
         app:dotsColor="#DFAF36"

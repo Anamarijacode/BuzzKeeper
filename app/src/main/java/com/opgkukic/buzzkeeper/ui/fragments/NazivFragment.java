@@ -44,6 +44,7 @@ public class NazivFragment extends Fragment {
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         String currentDate = getCurrentDate();
         datumEditText.setText(currentDate);
+        sharedViewModel.setDatumKreiranja(currentDate);
         MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();
         materialDateBuilder.setTitleText("SELECT A DATE");
         final MaterialDatePicker materialDatePicker = materialDateBuilder.build();
@@ -82,20 +83,19 @@ public class NazivFragment extends Fragment {
         });
         datumEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
 
             @Override
-            public void afterTextChanged(Editable editable) {
-                sharedViewModel.setDatumKreiranja(editable.toString());
+            public void afterTextChanged(Editable s) {
+                if (s != null && !s.toString().isEmpty()) {
+                    sharedViewModel.setDatumKreiranja(s.toString());
+                }
             }
         });
+
 
 //        nazivEditText = view.findViewById(R.id.nazivPcelinjakaEditText);
 //        datumEditText = view.findViewById(R.id.datumKreiranjaEditText);

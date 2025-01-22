@@ -36,7 +36,6 @@
     <string name="prezime">Last name</string>
     <string name="prezimeHint">Enter your last name</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="resetLozinka">Forgot your password?</string>
     <string name="zabLozinka">Change password</string>
     <string name="posaljibtn">Send an email to change your password</string>
@@ -52,4 +51,7 @@
     <string name="latPcelinjak">Latitude</string>
     <string name="locPcelinjak">Locate me</string>
     <string name="udoPcelinjak">Enter the date</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+
 </resources>
