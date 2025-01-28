@@ -9,7 +9,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-        android:id="@+id/dots_indicator"
+        android:id="@+id/dots_indicatorDodajKosnicu"
         android:layout_width="347dp"
         android:layout_height="20dp"
         android:layout_marginStart="80dp"
@@ -19,11 +19,10 @@
         app:dotsSpacing="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:progressMode="true"/>
-
+        app:progressMode="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_back"
+        android:id="@+id/fab_backDodajKosnicu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -34,7 +33,7 @@
 
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager2"
+        android:id="@+id/viewPager2DodajKosnicu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
@@ -43,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dots_indicator"
+        app:layout_constraintTop_toBottomOf="@+id/dots_indicatorDodajKosnicu"
         app:layout_constraintVertical_bias="1.0" />
 
 

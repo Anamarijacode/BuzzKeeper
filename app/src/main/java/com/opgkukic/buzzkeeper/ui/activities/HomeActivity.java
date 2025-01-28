@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
@@ -103,6 +104,25 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+    public void hideBottomNavigationView() {
+        BottomAppBar bottomNavigationView = findViewById(R.id.bab);
+        fabMid = findViewById(R.id.fab_middle);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.setVisibility(View.GONE);
+            fabMid.setVisibility(View.GONE);
+
+        }
+    }
+
+    public void showBottomNavigationView() {
+        BottomAppBar bottomNavigationView = findViewById(R.id.bab);
+        fabMid = findViewById(R.id.fab_middle);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.setVisibility(View.VISIBLE);
+            fabMid.setVisibility(View.VISIBLE);
+        }
+    }
+
 //    private void loadPcelinjaciFromFirebase(RecyclerView recyclerView) {
 //        Log.d("Poziv", "Pozivam loadPcelinjaciFromFirebase metodu");
 //        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("pcelinjaci");

@@ -5,40 +5,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-     >
+    android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/pcelinjakImageView"
-        android:layout_width="266dp"
-        android:layout_height="257dp"
-        android:layout_marginTop="12dp"
+    <!-- FrameLayout za sliku i sadržaj -->
+    <FrameLayout
+        android:id="@+id/imageContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/image_border"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
+        android:clipToOutline="true"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/pokretan" />
-
-    <TextView
-        android:id="@+id/nazivPcelinjakaTextView"
-        android:layout_width="265dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/image_border"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:drawableTint="#7E3535"
-        app:fontFamily="@font/actor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="4:3">
 
 
+        <ImageView
+            android:id="@+id/pcelinjakImageView"
+            android:layout_width="369dp"
+            android:layout_height="161dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginRight="12dp"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/pokretan" />
+
+        <TextView
+            android:id="@+id/nazivPcelinjakaTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="#806c865e"/>
+
+        <!-- TextView - Broj košnica -->
+
+        <!-- Dugmad -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="#806c865e">
+
+            <!-- Dodaj košnicu -->
+            <TextView
+                android:id="@+id/numKosnicaTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:text="Broj košnica: 15"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Opcije -->
+            <Button
+                android:id="@+id/addHiveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/purple_500"
+                android:padding="8dp"
+                android:text="Dodaj"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/moreOptionsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_700"
+                android:padding="8dp"
+                android:text="Opcije"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 

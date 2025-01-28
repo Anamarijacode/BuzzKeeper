@@ -47,4 +47,6 @@
     <string name="udoPcelinjak">Unesite datum</string>
     <string name="open_drawer">Otvori</string>
     <string name="close_drawer">Zatvori</string>
+    <string name="broj_kosnica">Broj košnica: %d</string>
+
 </resources>

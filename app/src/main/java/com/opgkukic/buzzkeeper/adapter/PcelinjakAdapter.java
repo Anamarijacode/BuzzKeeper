@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.opgkukic.buzzkeeper.R;
 import com.opgkukic.buzzkeeper.model.Pčelinjak;
 import com.opgkukic.buzzkeeper.ui.activities.PcelinjakSingleActivity;
+import com.opgkukic.buzzkeeper.ui.fragments.DodajKosnicuView2Fragment;
 import com.opgkukic.buzzkeeper.ui.fragments.PcelinjakSingleFragment;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -52,22 +54,36 @@ public class PcelinjakAdapter extends RecyclerView.Adapter<PcelinjakAdapter.Pcel
             holder.pcelinjakImageView.setImageResource(R.drawable.pokretan);
         }
 
+        // On item click, navigate to PcelinjakSingleFragment
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), PcelinjakSingleActivity.class);
+            Fragment newFragment = new PcelinjakSingleFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("nazivPčelinjaka", pcelinjak.getNazivPčelinjaka());
+            bundle.putString("tipPčelinjaka", pcelinjak.getTipPčelinjaka());
+            bundle.putString("tipMjesta", pcelinjak.getTipMjesta());
+            bundle.putString("latituda", pcelinjak.getLokacija().getLatitude());
+            bundle.putString("longituda", pcelinjak.getLokacija().getLongitude());
+            bundle.putString("userId", pcelinjak.getUserId());
+            newFragment.setArguments(bundle);
 
-            // Add data to the intent
-            intent.putExtra("nazivPcelinjaka", pcelinjak.getNazivPčelinjaka());
-            intent.putExtra("tipPcelinjaka", pcelinjak.getTipPčelinjaka());
-            intent.putExtra("tipMjesta", pcelinjak.getTipMjesta());
-            intent.putExtra("latituda", pcelinjak.getLokacija().getLatitude());
-            intent.putExtra("longituda", pcelinjak.getLokacija().getLongitude());
-            intent.putExtra("userId", pcelinjak.getUserId());
-
-            // Start the activity
-            v.getContext().startActivity(intent);
+            FragmentManager fragmentManager = parentFragment.getParentFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.fragment_container, newFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
 
+        // On "Dodaj" button click, open DodajKosnicuView2Fragment
+        holder.addHiveButton.setOnClickListener(v -> {
+            Fragment newFragment = new DodajKosnicuView2Fragment();
+            FragmentManager fragmentManager = parentFragment.getParentFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.fragment_container, newFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        });
     }
+
 
 
     @Override
@@ -78,11 +94,14 @@ public class PcelinjakAdapter extends RecyclerView.Adapter<PcelinjakAdapter.Pcel
     public static class PcelinjakViewHolder extends RecyclerView.ViewHolder {
         TextView nazivTextView;
         ImageView pcelinjakImageView;
+        Button addHiveButton; // Reference to the "Dodaj" button
 
         public PcelinjakViewHolder(@NonNull View itemView) {
             super(itemView);
             nazivTextView = itemView.findViewById(R.id.nazivPcelinjakaTextView);
             pcelinjakImageView = itemView.findViewById(R.id.pcelinjakImageView);
+            addHiveButton = itemView.findViewById(R.id.addHiveButton); // Initialize the button
         }
     }
+
 }

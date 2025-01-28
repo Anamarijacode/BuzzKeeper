@@ -5,11 +5,9 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.google.firebase.database.annotations.NotNull;
 import com.opgkukic.buzzkeeper.ui.fragments.PcelinjakSingleDateAndTimeFragment;
-
 import com.opgkukic.buzzkeeper.ui.fragments.PcelinjakSingleKosniceFragment;
-
-import org.jetbrains.annotations.NotNull;
 
 public class SinglePcelinjakAdapter extends FragmentStateAdapter {
     private final Bundle data;
@@ -34,7 +32,7 @@ public class SinglePcelinjakAdapter extends FragmentStateAdapter {
                 fragment = new PcelinjakSingleKosniceFragment();
                 break;
         }
-        fragment.setArguments(data);
+        fragment.setArguments(data); // Postavljanje argumenata
         return fragment;
     }
 
