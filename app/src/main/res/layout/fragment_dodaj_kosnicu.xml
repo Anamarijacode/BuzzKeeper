@@ -46,29 +46,31 @@
             app:layout_constraintEnd_toStartOf="@+id/buttonKamera"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tNaslovDodajKosnicu"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            tools:src="@tools:sample/backgrounds/scenic"
+            android:scaleType="fitXY"/>
 
 
-
-        <Button
-            android:id="@+id/buttonKamera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/buttonGalerija"
+            android:layout_width="80dp"
+            android:layout_height="37dp"
             android:layout_marginTop="216dp"
-            android:text="Button"
+            android:background="@drawable/image_border"
+            android:src="@drawable/ic_galery"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.949"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonGalerija"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/buttonKamera"
+            android:layout_width="80dp"
+            android:layout_height="37dp"
             android:layout_marginTop="136dp"
-            android:text="Button"
+            android:background="@drawable/image_border"
+            android:src="@drawable/ic_camera"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

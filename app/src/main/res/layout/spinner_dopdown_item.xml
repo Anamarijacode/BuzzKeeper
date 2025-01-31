@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:textSize="15sp"
     android:gravity="left"
-    android:textColor="#000000"
+    android:textColor="@color/white"
     android:padding="5dip"
     app:fontFamily="@font/actor"
+    android:backgroun="@drawable/image_border"
     />

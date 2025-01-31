@@ -33,6 +33,7 @@ public class DodajKosnicuFragment extends Fragment {
         if (args != null) {
             imageUri = args.getString("image_uri");
             if (imageUri != null) {
+               imageView.setScaleType(ImageView.ScaleType.FIT_XY); //SKALIRANJE SLIKE AKO BUDE RADILO
                 Glide.with(this).load(imageUri).into(imageView); // Učitavanje slike
                 removeImageButton.setVisibility(View.VISIBLE);
             } else {
