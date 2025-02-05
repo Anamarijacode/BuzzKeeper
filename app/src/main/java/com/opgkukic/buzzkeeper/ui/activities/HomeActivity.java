@@ -4,36 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.opgkukic.buzzkeeper.R;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.opgkukic.buzzkeeper.model.Pčelinjak;
-import com.opgkukic.buzzkeeper.ui.fragments.EnciklopedijaFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.ForumFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Enciklopedija.EnciklopedijaFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Forum.ForumFragment;
 import com.opgkukic.buzzkeeper.ui.fragments.HomeFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.OrganizatorFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.ProfilFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.ResetPasswordFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.SingUpFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.opgkukic.buzzkeeper.ui.fragments.Organizator.OrganizatorFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Profil.ProfilFragment;
 
 public class HomeActivity extends AppCompatActivity {
     FloatingActionButton fabMid;

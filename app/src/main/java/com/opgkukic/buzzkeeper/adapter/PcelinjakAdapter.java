@@ -1,6 +1,5 @@
 package com.opgkukic.buzzkeeper.adapter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.opgkukic.buzzkeeper.R;
 import com.opgkukic.buzzkeeper.model.Pčelinjak;
-import com.opgkukic.buzzkeeper.ui.activities.PcelinjakSingleActivity;
-import com.opgkukic.buzzkeeper.ui.fragments.DodajKosnicuView2Fragment;
-import com.opgkukic.buzzkeeper.ui.fragments.PcelinjakSingleFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Kosnice.DodajKosnicu.DodajKosnicuView2Fragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Pcelinjaci.PcelinjakSingleFragment;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 

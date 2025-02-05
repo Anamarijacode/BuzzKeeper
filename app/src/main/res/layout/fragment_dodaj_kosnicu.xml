@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerFragment"
-    tools:context=".ui.fragments.DodajKosnicuFragment"
+    tools:context=".ui.fragments.Kosnice.DodajKosnicu.DodajKosnicuFragment"
   >
 
     <androidx.constraintlayout.widget.ConstraintLayout

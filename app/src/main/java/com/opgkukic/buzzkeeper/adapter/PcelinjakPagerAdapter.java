@@ -5,8 +5,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.opgkukic.buzzkeeper.ui.fragments.LokacijaFragment;
 import com.opgkukic.buzzkeeper.ui.fragments.NazivFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.TipMjestaFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.TipPcelinjakaFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Pcelinjaci.DodajPcelinjak.TipMjestaFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Pcelinjaci.DodajPcelinjak.TipPcelinjakaFragment;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 

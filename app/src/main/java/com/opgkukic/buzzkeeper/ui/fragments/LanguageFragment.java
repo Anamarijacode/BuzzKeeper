@@ -1,11 +1,8 @@
 package com.opgkukic.buzzkeeper.ui.fragments;
 
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -19,6 +16,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.opgkukic.buzzkeeper.R;
+import com.opgkukic.buzzkeeper.ui.fragments.Prijava.LoginFragment;
 
 import java.util.Locale;
 

@@ -3,12 +3,11 @@ package com.opgkukic.buzzkeeper.adapter;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.opgkukic.buzzkeeper.ui.fragments.DodajKosnicuFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.DodajKosnicuFragment2;
-import com.opgkukic.buzzkeeper.ui.fragments.DodajKosnicuFragment3;
+import com.opgkukic.buzzkeeper.ui.fragments.Kosnice.DodajKosnicu.DodajKosnicuFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Kosnice.DodajKosnicu.DodajKosnicuFragment2;
+import com.opgkukic.buzzkeeper.ui.fragments.Kosnice.DodajKosnicu.DodajKosnicuFragment3;
 
 import org.jetbrains.annotations.NotNull;
 

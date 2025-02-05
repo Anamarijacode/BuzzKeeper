@@ -16,8 +16,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.opgkukic.buzzkeeper.R;
 import com.opgkukic.buzzkeeper.adapter.PcelinjakAdapter;
 import com.opgkukic.buzzkeeper.model.Pčelinjak;
+import com.opgkukic.buzzkeeper.ui.fragments.Pcelinjaci.DodajPcelinjak.DodajPcelinjakFragment;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 

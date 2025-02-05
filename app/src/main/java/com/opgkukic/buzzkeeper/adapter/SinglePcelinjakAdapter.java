@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.google.firebase.database.annotations.NotNull;
-import com.opgkukic.buzzkeeper.ui.fragments.PcelinjakSingleDateAndTimeFragment;
-import com.opgkukic.buzzkeeper.ui.fragments.PcelinjakSingleKosniceFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Pcelinjaci.PcelinjakSingleDateAndTimeFragment;
+import com.opgkukic.buzzkeeper.ui.fragments.Pcelinjaci.PcelinjakSingleKosniceFragment;
 
 public class SinglePcelinjakAdapter extends FragmentStateAdapter {
     private final Bundle data;
