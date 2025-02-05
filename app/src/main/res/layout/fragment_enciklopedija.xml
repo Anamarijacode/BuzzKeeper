@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/novi"
     tools:context=".ui.fragments.Enciklopedija.EnciklopedijaFragment">
 
+    <SearchView
+        android:layout_width="355dp"
+        android:layout_height="40dp"
+        android:background="@drawable/search_border"
+        android:tint="@color/white"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="66dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="277dp"
-        android:layout_marginBottom="440dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="376dp"
+        android:layout_height="577dp"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="127dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

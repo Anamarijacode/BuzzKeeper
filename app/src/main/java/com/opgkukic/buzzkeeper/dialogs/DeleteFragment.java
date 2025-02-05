@@ -1,7 +1,8 @@
-package com.opgkukic.buzzkeeper.ui.fragments.Kosnice.PregledKosnice;
+package com.opgkukic.buzzkeeper.dialogs;
 
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,13 +11,12 @@ import android.view.ViewGroup;
 
 import com.opgkukic.buzzkeeper.R;
 
-public class PregledKosniceBolestiBiljeskeFragment extends Fragment {
 
-  //SEEKBAR JE BAR ZA POMICANJE ONAJ KOJI TREBAŠ
+public class DeleteFragment extends DialogFragment {
 
 
-    public static PregledKosniceBolestiBiljeskeFragment newInstance(String param1, String param2) {
-        PregledKosniceBolestiBiljeskeFragment fragment = new PregledKosniceBolestiBiljeskeFragment();
+    public static DeleteFragment newInstance(String param1, String param2) {
+        DeleteFragment fragment = new DeleteFragment();
 
         return fragment;
     }
@@ -24,12 +24,13 @@ public class PregledKosniceBolestiBiljeskeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_pregled_kosnice_bolesti_biljeske, container, false);
+        View view = inflater.inflate(R.layout.fragment_delete, container, false);
         return view;
     }
 }

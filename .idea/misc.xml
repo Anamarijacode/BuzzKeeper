@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/enciklopedia_item_border.xml" value="0.3675" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/ic_add.xml" value="0.186" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.3525" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.3525" />
@@ -12,19 +13,30 @@
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/image_background.xml" value="0.352" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/image_border.xml" value="0.3525" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/organizator.xml" value="0.336" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/search_border.xml" value="0.259" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/drawable/spinner_background.xml" value="0.336" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/activity_home.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/activity_lunch.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/activity_main.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/custom_kosnica_item.xml" value="0.309375" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/enciklopedia_item.xml" value="0.33" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_biljeske.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_camera.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_delete.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_detalji_pcelinjaka_datum_kreiranja_vrsta.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_detalji_pcelinjaka_karta_kosnice.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_dodaj_kosnicu.xml" value="0.328125" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_dodaj_kosnicu2.xml" value="0.1" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_dodaj_kosnicu3.xml" value="0.328125" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_dodaj_kosnicu_view2.xml" value="0.328125" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_dodaj_pcelinjak.xml" value="0.33" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_dodaj_pregled_bolesti_kosnice_lista_automatska_vrijeme_a_p_i_temp_a_p_iispasa_drop.xml" value="0.2807971014492754" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_dodaj_pregled_kolicina_tunos_p_populacija_k_dodatne_biljeske.xml" value="0.2807971014492754" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_enciklopedija.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_enciklopedija_detalji.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_forum.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_home.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_kosnica.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_language.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_login.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_lokacija.xml" value="0.1" />
@@ -33,13 +45,25 @@
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_pcelinjak_single.xml" value="0.309375" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_pcelinjak_single_date_and_time.xml" value="0.309375" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_pcelinjak_single_kosnice.xml" value="0.309375" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_povijest_pregleda.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_pregled.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_pregled_datum.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_pregled_datum_kolicin_t_unos_p_kolicina_v_populacija_kosnice_vrijeme_temperatura_ispasa.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_pregled_kosnice_bolesti_biljeske.xml" value="0.2807971014492754" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_profil.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_reset_password.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_sing_up.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_tip_mjesta.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_tip_pcelinjaka.xml" value="0.33" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_to_do.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_uredi_broj_sanduka_broj_okvira_gradnjaka_legla.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_uredi_kosnicu_broj_okvira_polena_meda_matica_resetka_startost_matice_kolicina_legla.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_uredi_kosnicu_ime_slika_vrsta.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_uredi_pcelinjak_datum_kreiranja_vrsta_pcelinjaka_tip_mjesta.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/fragment_uredi_pcelinjak_naziv_mjesto_lista_kosnica.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/item_pcelinjak.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/nav_header.xml" value="0.309375" />
+        <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/recyleviewenciklopediaitem.xml" value="0.8950276243093923" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/spinner_dopdown_item.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/layout/spinner_item.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/ambosnjak/Desktop/BuzzKeeper/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
