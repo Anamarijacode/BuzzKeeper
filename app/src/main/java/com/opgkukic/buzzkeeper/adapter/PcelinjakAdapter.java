@@ -98,7 +98,7 @@ public class PcelinjakAdapter extends RecyclerView.Adapter<PcelinjakAdapter.Pcel
             super(itemView);
             nazivTextView = itemView.findViewById(R.id.nazivPcelinjakaTextView);
             pcelinjakImageView = itemView.findViewById(R.id.pcelinjakImageView);
-            addHiveButton = itemView.findViewById(R.id.addHiveButton); // Initialize the button
+            addHiveButton = itemView.findViewById(R.id.addHiveButton);
         }
     }
 

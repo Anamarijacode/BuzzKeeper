@@ -11,12 +11,13 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="21dp"
-        android:background="@drawable/image_border"
+        android:background="@drawable/pozadina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/naslov"
             android:layout_width="346dp"
             android:layout_height="49dp"
             android:layout_gravity="center|top"
@@ -24,11 +25,13 @@
             android:text="SAMO DA VIDIM BOJU I VELIČINU"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:gravity="start|center"/>
+            android:gravity="start|center"
+            android:layout_marginTop="10dp"/>
 
         <TextView
-            android:layout_width="340dp"
-            android:layout_height="136dp"
+            android:id="@+id/tekst"
+            android:layout_width="338dp"
+            android:layout_height="118dp"
             android:layout_gravity="center|bottom"
             android:layout_heigt="182dp"
             android:background="@drawable/enciklopedia_item_border"
@@ -36,7 +39,8 @@
             android:maxLines="5"
             android:textColor="@color/white"
             android:textSize="16sp"
-            tools:text="@tools:sample/lorem/random" />
+            tools:text="@tools:sample/lorem/random"
+            android:layout_marginBottom="10dp"/>
 
     </FrameLayout>
 

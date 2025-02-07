@@ -1,6 +1,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Vanjski okvir sa svijetlom zelenom bojom -->
-    <solid android:color="#546d46" /> <!-- Svijetla zelena pozadina (#A5D6A7) -->
+    <solid android:color="#6c855e" /> <!-- Svijetla zelena pozadina (#A5D6A7) -->
     <stroke
         android:width="2dp"
         android:color="#546d46" /> <!-- Svijetlo tamnija zelena za obrub (#81C784) -->
