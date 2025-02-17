@@ -30,6 +30,17 @@
         <item>@string/croatian</item>
         <item>@string/english</item>
     </string-array>
+    <string-array name="hiveType">
+        <item>@string/odaberite_k</item>
+        <item>@string/D_B</item>
+        <item>@string/L_R</item>
+        <item>@string/AZ_GROOM</item>
+        <item>@string/AZS</item>
+        <item>@string/fr</item>
+        <item>@string/nuk</item>
+        <item>@string/dub</item>
+        <item>@string/pl</item>
+    </string-array>
     <string name="email_lozinka">Please enter your E-mail and password!</string>
     <string name="ime">Name</string>
     <string name="imeHint">Enter your name</string>
@@ -56,6 +67,39 @@
     <string name="broj_kosnica">Number of hives: %d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dKosnicu">Add hive</string>
+    <string name="nKosnice">Name of the hive</string>
+    <string name="unKosnice">Enter the name of the hive</string>
+    <string name="tKosnice">Hive type</string>
+    <string name="odaberite_k">Select the hive type</string>
+    <string name="D_B">DB</string>
+    <string name="L_R">LR</string>
+    <string name="AZ_GROOM">AZ Grom</string>
+    <string name="AZS">AZ Standard</string>
+    <string name="fr">FR</string>
+    <string name="nuk">Nukleus</string>
+    <string name="dub">Stump</string>
+    <string name="pl">Braids</string>
+    <string name="brKosnica">Number of hives</string>
+    <string name="nbrKosnice">Enter number of hives</string>
+    <string name="brSanduka">Number of crate</string>
+    <string name="brnSanduka">Enter the number of crate</string>
+    <string name="bOkvira">Number of frame</string>
+    <string name="brnOkvira">Enter number of frame</string>
+    <string name="bOkviraLegla">Number of brood frame</string>
+    <string name="brnOkviraLegla">Enter the number of brood frame</string>
+    <string name="bOkviraGradnjaka">Number of building frame</string>
+    <string name="brnOkviraGradnjaka">Enter the number of building frame</string>
+    <string name="bPolena">Number of pollen frame</string>
+    <string name="brnPolena">Enter the number of pollen frame</string>
+    <string name="bMeda">Number of the honey frame</string>
+    <string name="brnMeda">Enter the number of honey frame</string>
+    <string name="maticna">Mother grid</string>
+    <string name="pMatica">Is there a mother grid?</string>
+    <string name="sMatice">Age of queen bee</string>
+    <string name="snMatica">Enter the age of queen bee</string>
+    <string name="nLegla">Number of brood</string>
+    <string name="brnLegla">Enter a number of brood</string>
 
 
 </resources>

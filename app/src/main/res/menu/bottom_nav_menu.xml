@@ -7,7 +7,7 @@
     android:icon="@drawable/organizator"
   />
     <item android:id="@+id/Forum"
-    android:title="@string/menuForum"
+    android:title="ToDO"
     android:icon="@drawable/forum"
   />
     <item

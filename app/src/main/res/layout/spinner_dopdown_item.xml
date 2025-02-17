@@ -8,5 +8,5 @@
     android:textColor="@color/white"
     android:padding="5dip"
     app:fontFamily="@font/actor"
-    android:backgroun="@drawable/image_border"
+    android:background="@drawable/image_border"
     />

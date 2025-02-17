@@ -1,35 +1,40 @@
 package com.opgkukic.buzzkeeper.model;
 
+import org.checkerframework.checker.units.qual.A;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Enciklopedija {
     private String authorId;
-
-    public List<String> getLiteratura() {
-        return literatura;
-    }
-
-    public void setLiteratura(List<String> literatura) {
-        this.literatura = literatura;
-    }
-
     private int idEnciklopedija;
     private String datumKreiranja;
     private String naslov;
     private List<String> sadrzaj;
     private String javno;
     private List<String> literatura;
+    private List<String> tags;
 
-    public Enciklopedija(){}
+    public Enciklopedija() {
+        this.sadrzaj = new ArrayList<>();
+        this.literatura = new ArrayList<>();
+    }
 
-    public Enciklopedija(String authorId, int idEnciklopedija, String datumKreiranja, String naslov, List<String> sadrzaj, String javno, List<String> literatura) {
+    public Enciklopedija(String authorId, int idEnciklopedija, String datumKreiranja, String naslov,
+                         List<String> sadrzaj, String javno, List<String> literatura, List<String> tags) {
         this.authorId = authorId;
         this.idEnciklopedija = idEnciklopedija;
         this.datumKreiranja = datumKreiranja;
         this.naslov = naslov;
-        this.sadrzaj = sadrzaj;
+        this.sadrzaj = (sadrzaj != null) ? sadrzaj : new ArrayList<>();
         this.javno = javno;
-        this.literatura = literatura;
+        this.literatura = (literatura != null) ? literatura : new ArrayList<>();
+        this.tags = (tags != null) ? tags : new ArrayList<>();
+    }
+    public Enciklopedija(String naslov, List<String> sadrzaj, List<String> tags) {
+        this.naslov = naslov;
+        this.sadrzaj = (sadrzaj != null) ? sadrzaj : new ArrayList<>();
+        this.tags = (tags != null) ? tags : new ArrayList<>();
     }
 
     public String getAuthorId() {
@@ -65,11 +70,11 @@ public class Enciklopedija {
     }
 
     public List<String> getSadrzaj() {
-        return sadrzaj;
+        return (sadrzaj != null) ? sadrzaj : new ArrayList<>(); // Prevent null
     }
 
     public void setSadrzaj(List<String> sadrzaj) {
-        this.sadrzaj = sadrzaj;
+        this.sadrzaj = (sadrzaj != null) ? sadrzaj : new ArrayList<>();
     }
 
     public String getJavno() {
@@ -78,5 +83,21 @@ public class Enciklopedija {
 
     public void setJavno(String javno) {
         this.javno = javno;
+    }
+
+    public List<String> getLiteratura() {
+        return (literatura != null) ? literatura : new ArrayList<>();
+    }
+
+    public void setLiteratura(List<String> literatura) {
+        this.literatura = (literatura != null) ? literatura : new ArrayList<>();
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 }

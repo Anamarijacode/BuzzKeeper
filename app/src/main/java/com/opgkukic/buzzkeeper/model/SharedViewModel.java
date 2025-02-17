@@ -71,6 +71,129 @@ public class SharedViewModel extends ViewModel
     public LiveData<String> getTipMjestaPcelinjaka() {
         return tipMjestaPcelinjaka;
     }
+    //KOŠNICE
+    private MutableLiveData<String> nazivKosnice = new MutableLiveData<>();
+    private MutableLiveData<String> brojKosnice = new MutableLiveData<>();
+    private MutableLiveData<String> slika = new MutableLiveData<>();
+    private MutableLiveData<String> tipKosnice = new MutableLiveData<>();
+    private MutableLiveData<String> brojSanduka = new MutableLiveData<>();
+    private MutableLiveData<String> brojOkvira = new MutableLiveData<>();
+    private MutableLiveData<String> brojOkviraGrdanjaka = new MutableLiveData<>();
+    private MutableLiveData<String> brojoKviraleglka = new MutableLiveData<>();
+    private MutableLiveData<String> dbrojokvirapolena = new MutableLiveData<>();
+    private MutableLiveData<String> brojokvirameda = new MutableLiveData<>();
+    private MutableLiveData<String> maticnaresetka = new MutableLiveData<>();
+    private MutableLiveData<String> startostmatice = new MutableLiveData<>();
+    private MutableLiveData<String> kolLegla = new MutableLiveData<>();
+
+
+    public void setNazivPčelinjaka(MutableLiveData<String> nazivPčelinjaka) {
+        this.nazivPčelinjaka = nazivPčelinjaka;
+    }
+
+    public MutableLiveData<String> getNazivKosnice() {
+        return nazivKosnice;
+    }
+
+    public void setNazivKosnice(MutableLiveData<String> nazivKosnice) {
+        this.nazivKosnice = nazivKosnice;
+    }
+
+    public MutableLiveData<String> getBrojKosnice() {
+        return brojKosnice;
+    }
+
+    public void setBrojKosnice(MutableLiveData<String> brojKosnice) {
+        this.brojKosnice = brojKosnice;
+    }
+
+    public MutableLiveData<String> getSlika() {
+        return slika;
+    }
+
+    public void setSlika(MutableLiveData<String> slika) {
+        this.slika = slika;
+    }
+
+    public MutableLiveData<String> getTipKosnice() {
+        return tipKosnice;
+    }
+
+    public void setTipKosnice(MutableLiveData<String> tipKosnice) {
+        this.tipKosnice = tipKosnice;
+    }
+
+    public MutableLiveData<String> getBrojSanduka() {
+        return brojSanduka;
+    }
+
+    public void setBrojSanduka(MutableLiveData<String> brojSanduka) {
+        this.brojSanduka = brojSanduka;
+    }
+
+    public MutableLiveData<String> getBrojOkvira() {
+        return brojOkvira;
+    }
+
+    public void setBrojOkvira(MutableLiveData<String> brojOkvira) {
+        this.brojOkvira = brojOkvira;
+    }
+
+    public MutableLiveData<String> getBrojOkviraGrdanjaka() {
+        return brojOkviraGrdanjaka;
+    }
+
+    public void setBrojOkviraGrdanjaka(MutableLiveData<String> brojOkviraGrdanjaka) {
+        this.brojOkviraGrdanjaka = brojOkviraGrdanjaka;
+    }
+
+    public MutableLiveData<String> getBrojoKviraleglka() {
+        return brojoKviraleglka;
+    }
+
+    public void setBrojoKviraleglka(MutableLiveData<String> brojoKviraleglka) {
+        this.brojoKviraleglka = brojoKviraleglka;
+    }
+
+    public MutableLiveData<String> getDbrojokvirapolena() {
+        return dbrojokvirapolena;
+    }
+
+    public void setDbrojokvirapolena(MutableLiveData<String> dbrojokvirapolena) {
+        this.dbrojokvirapolena = dbrojokvirapolena;
+    }
+
+    public MutableLiveData<String> getBrojokvirameda() {
+        return brojokvirameda;
+    }
+
+    public void setBrojokvirameda(MutableLiveData<String> brojokvirameda) {
+        this.brojokvirameda = brojokvirameda;
+    }
+
+    public MutableLiveData<String> getMaticnaresetka() {
+        return maticnaresetka;
+    }
+
+    public void setMaticnaresetka(MutableLiveData<String> maticnaresetka) {
+        this.maticnaresetka = maticnaresetka;
+    }
+
+    public MutableLiveData<String> getStartostmatice() {
+        return startostmatice;
+    }
+
+    public void setStartostmatice(MutableLiveData<String> startostmatice) {
+        this.startostmatice = startostmatice;
+    }
+
+    public MutableLiveData<String> getKolLegla() {
+        return kolLegla;
+    }
+
+    public void setKolLegla(MutableLiveData<String> kolLegla) {
+        this.kolLegla = kolLegla;
+    }
 }
 
 
