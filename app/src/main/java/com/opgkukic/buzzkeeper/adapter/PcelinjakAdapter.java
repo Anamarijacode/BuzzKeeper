@@ -101,5 +101,9 @@ public class PcelinjakAdapter extends RecyclerView.Adapter<PcelinjakAdapter.Pcel
             addHiveButton = itemView.findViewById(R.id.addHiveButton);
         }
     }
+    public void updateList(List<Pčelinjak> newList) {
+        this.pcelinjaci = newList;
+        notifyDataSetChanged();
+    }
 
 }

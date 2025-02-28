@@ -81,5 +81,6 @@
     <string name="snMatica">Unesite straost matice</string>
     <string name="nLegla">Količina legla</string>
     <string name="brnLegla">Unesite količinu legla</string>
+    <string name="pretrazi">Pretraži</string>
 
 </resources>

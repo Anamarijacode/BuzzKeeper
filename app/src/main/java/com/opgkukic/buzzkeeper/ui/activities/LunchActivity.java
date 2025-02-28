@@ -10,6 +10,8 @@ import android.os.Handler;
 import com.google.firebase.auth.FirebaseUser;
 import com.opgkukic.buzzkeeper.R;
 
+import java.io.File;
+
 public class LunchActivity extends AppCompatActivity {
 
     @Override
@@ -17,6 +19,9 @@ public class LunchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lunch);
         getSupportActionBar().hide();
+        File dexOutputDir = getCodeCacheDir();
+        dexOutputDir.setReadOnly();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

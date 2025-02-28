@@ -100,6 +100,7 @@
     <string name="snMatica">Enter the age of queen bee</string>
     <string name="nLegla">Number of brood</string>
     <string name="brnLegla">Enter a number of brood</string>
+    <string name="pretrazi">Search</string>
 
 
 </resources>
