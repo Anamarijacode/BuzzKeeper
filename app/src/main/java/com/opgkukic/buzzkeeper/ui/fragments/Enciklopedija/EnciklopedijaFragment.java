@@ -2,6 +2,7 @@ package com.opgkukic.buzzkeeper.ui.fragments.Enciklopedija;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SearchView;
@@ -35,7 +36,8 @@ public class EnciklopedijaFragment extends Fragment {
     private EnciklopedijaAdapter adapter;
     private List<Enciklopedija> enciklopedijaList = new ArrayList<>();
     private List<Enciklopedija> filteredList = new ArrayList<>();
-
+    private String selectedCategory = "Sve";  // Trenutno izabrana kategorija
+    private String searchQuery = ""; // Ovo će pohranjivati unos iz pretrage
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,10 +61,23 @@ public class EnciklopedijaFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                filter(newText);
+                searchQuery = newText;  // Ažuriramo searchQuery
+                filter(searchQuery);  // Pozivamo filter sa novim unosom
                 return true;
             }
         });
+
+        // Ovdje dodajemo kod za zatvaranje SearchView kada kliknete izvan njega
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (searchView.hasFocus()) {
+                    searchView.clearFocus(); // Zatvaramo SearchView kad korisnik klikne izvan njega
+                }
+                return false;
+            }
+        });
+
         Spinner spinner = view.findViewById(R.id.spinnerFilter);
         List<String> categories = new ArrayList<>();
         categories.add("Sve");
@@ -76,20 +91,20 @@ public class EnciklopedijaFragment extends Fragment {
         categories.add("DB košnice");
         categories.add("Pčelinjaci");
 
-
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, categories);
         spinner.setAdapter(spinnerAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selectedCategory = categories.get(position);
+                selectedCategory = categories.get(position);
                 filterByCategory(selectedCategory);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-
+                selectedCategory = "Sve";
+                filterByCategory(selectedCategory);
             }
         });
 
@@ -97,6 +112,7 @@ public class EnciklopedijaFragment extends Fragment {
 
         return view;
     }
+
 
     private void ReadData() {
         FirebaseUser user = auth.getCurrentUser();
@@ -122,12 +138,10 @@ public class EnciklopedijaFragment extends Fragment {
                         String enciklopedijaId = dataSnapshot.getKey();
                         String naslov = dataSnapshot.child("naziv").getValue(String.class);
                         Object tagsObj = dataSnapshot.child("tags").getValue();
-
                         String sadrzaj = dataSnapshot.child("sadrzaj").getValue(String.class);
                         if (sadrzaj == null) {
                             sadrzaj = ""; // Ako nema podataka, neka bude prazan string
                         }
-
 
                         List<String> tagsLista = new ArrayList<>();
                         if (tagsObj instanceof Map) {
@@ -137,7 +151,7 @@ public class EnciklopedijaFragment extends Fragment {
                             tagsLista = (List<String>) tagsObj;
                         }
 
-                        Enciklopedija enciklopedija = new Enciklopedija(enciklopedijaId,naslov, tagsLista, sadrzaj);
+                        Enciklopedija enciklopedija = new Enciklopedija(enciklopedijaId, naslov, tagsLista, sadrzaj);
                         enciklopedijaList.add(enciklopedija);
 
                     } catch (Exception e) {
@@ -149,6 +163,7 @@ public class EnciklopedijaFragment extends Fragment {
 
                 filteredList.clear();
                 filteredList.addAll(enciklopedijaList);
+                filterByCategory(selectedCategory); // Osvežavanje prema selektovanoj kategoriji
                 adapter.notifyDataSetChanged();
             }
 
@@ -158,7 +173,6 @@ public class EnciklopedijaFragment extends Fragment {
             }
         });
     }
-
 
     private void filter(String query) {
         filteredList.clear();
@@ -170,14 +184,13 @@ public class EnciklopedijaFragment extends Fragment {
 
             for (Enciklopedija item : enciklopedijaList) {
                 String naslov = item.getNaslov();
-             String  sadrzajList = item.getSadrzaj();
+                String sadrzajList = item.getSadrzaj();
                 List<String> tagsList = item.getTags();
 
                 String sadrzaj = "";
                 if (sadrzajList != null) {
                     sadrzaj = String.join("\n", sadrzajList);
                 }
-
 
                 if ((naslov != null && naslov.toLowerCase().contains(query)) ||
                         (sadrzaj != null && sadrzaj.toLowerCase().contains(query)) ||
@@ -187,9 +200,9 @@ public class EnciklopedijaFragment extends Fragment {
             }
         }
 
+        filterByCategory(selectedCategory); // Filtriranje ponovo prema kategoriji
         adapter.notifyDataSetChanged();
     }
-
 
     private boolean containsTag(List<String> tagsList, String query) {
         for (String tag : tagsList) {
@@ -199,24 +212,41 @@ public class EnciklopedijaFragment extends Fragment {
         }
         return false;
     }
+
     private void filterByCategory(String category) {
-        filteredList.clear();
+        List<Enciklopedija> tempFilteredList = new ArrayList<>();
 
         if (category.equals("Sve")) {
-            filteredList.addAll(enciklopedijaList);
+            tempFilteredList.addAll(enciklopedijaList);
         } else {
-
             for (Enciklopedija item : enciklopedijaList) {
                 List<String> tagsList = item.getTags();
                 if (tagsList != null && tagsList.contains(category)) {
-                    filteredList.add(item);
+                    tempFilteredList.add(item);
                 }
             }
         }
 
+        // Ponovno filtriranje prema pretrazi
+        List<Enciklopedija> finalFilteredList = new ArrayList<>();
+        for (Enciklopedija item : tempFilteredList) {
+            if (matchesSearchQuery(item)) {
+                finalFilteredList.add(item);
+            }
+        }
+
+        filteredList.clear();
+        filteredList.addAll(finalFilteredList);
         adapter.notifyDataSetChanged();
     }
 
-
-
+    private boolean matchesSearchQuery(Enciklopedija item) {
+        // Provjera pretrage u naslovu, sadržaju i tagovima
+        if (item.getNaslov().toLowerCase().contains(searchQuery) ||
+                item.getSadrzaj().toLowerCase().contains(searchQuery) ||
+                containsTag(item.getTags(), searchQuery)) {
+            return true;
+        }
+        return false;
+    }
 }

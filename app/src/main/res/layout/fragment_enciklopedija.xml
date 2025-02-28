@@ -7,36 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.Enciklopedija.EnciklopedijaFragment">
 
-    <!-- SearchView Container (with Spinner inside it) -->
+    <!-- SearchView and Spinner Container -->
     <FrameLayout
         android:id="@+id/searchContainer"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_width="391dp"
+        android:layout_height="39dp"
         android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
         android:layout_marginTop="66dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- SearchView -->
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="match_parent"
+            android:layout_width="273dp"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_marginTop="0dp"
             android:background="@drawable/search_border"
-            android:tint="@color/white" >
-        </SearchView>
+            android:iconifiedByDefault="false"
+            android:tint="@color/white"></SearchView>
 
-        <!-- Spinner inside the FrameLayout aligned to the right -->
         <Spinner
             android:id="@+id/spinnerFilter"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
-            android:layout_marginEnd="12dp" />
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
     </FrameLayout>
 
