@@ -46,9 +46,7 @@ public class EnciklopedijaAdapter extends RecyclerView.Adapter<EnciklopedijaAdap
         holder.itemView.setOnClickListener(v -> {
             EnciklopedijaDetaljiFragment newFragment = new EnciklopedijaDetaljiFragment();
             Bundle bundle = new Bundle();
-            bundle.putString("naziv", enciklopedija.getNaslov());
-            bundle.putStringArrayList("sadrzaj", new ArrayList<>(enciklopedija.getSadrzaj()));
-            bundle.putStringArrayList("literatura", new ArrayList<>(enciklopedija.getLiteratura()));
+            bundle.putString("idEnciklopedija", enciklopedija.getIdEnciklopedija()); // Poslati ID
             newFragment.setArguments(bundle);
 
             FragmentManager fragmentManager = parentFragment.getParentFragmentManager();
@@ -58,6 +56,8 @@ public class EnciklopedijaAdapter extends RecyclerView.Adapter<EnciklopedijaAdap
             transaction.commit();
         });
     }
+
+
 
     @Override
     public int getItemCount() {

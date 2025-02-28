@@ -68,8 +68,14 @@ public class EnciklopedijaFragment extends Fragment {
         categories.add("Sve");
         categories.add("Bolesti");
         categories.add("Uvod");
-        categories.add("Pčele");
-        categories.add("Općenito");
+        categories.add("Početak");
+        categories.add("Ispaša");
+        categories.add("RH");
+        categories.add("Košnice");
+        categories.add("LR košnice");
+        categories.add("DB košnice");
+        categories.add("Pčelinjaci");
+
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, categories);
         spinner.setAdapter(spinnerAdapter);
@@ -113,17 +119,15 @@ public class EnciklopedijaFragment extends Fragment {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     try {
-                        String naslov = dataSnapshot.child("naslov").getValue(String.class);
-                        Object sadrzajObj = dataSnapshot.child("sadrzaj").getValue();
+                        String enciklopedijaId = dataSnapshot.getKey();
+                        String naslov = dataSnapshot.child("naziv").getValue(String.class);
                         Object tagsObj = dataSnapshot.child("tags").getValue();
 
-                        List<String> sadrzajLista = new ArrayList<>();
-                        if (sadrzajObj instanceof Map) {
-                            Map<String, String> mapaSadrzaja = (Map<String, String>) sadrzajObj;
-                            sadrzajLista.addAll(mapaSadrzaja.values()); // Pretvaramo HashMap u List
-                        } else if (sadrzajObj instanceof List) {
-                            sadrzajLista = (List<String>) sadrzajObj;
+                        String sadrzaj = dataSnapshot.child("sadrzaj").getValue(String.class);
+                        if (sadrzaj == null) {
+                            sadrzaj = ""; // Ako nema podataka, neka bude prazan string
                         }
+
 
                         List<String> tagsLista = new ArrayList<>();
                         if (tagsObj instanceof Map) {
@@ -133,7 +137,7 @@ public class EnciklopedijaFragment extends Fragment {
                             tagsLista = (List<String>) tagsObj;
                         }
 
-                        Enciklopedija enciklopedija = new Enciklopedija(naslov, sadrzajLista, tagsLista);
+                        Enciklopedija enciklopedija = new Enciklopedija(enciklopedijaId,naslov, tagsLista, sadrzaj);
                         enciklopedijaList.add(enciklopedija);
 
                     } catch (Exception e) {
@@ -166,7 +170,7 @@ public class EnciklopedijaFragment extends Fragment {
 
             for (Enciklopedija item : enciklopedijaList) {
                 String naslov = item.getNaslov();
-                List<String> sadrzajList = item.getSadrzaj();
+             String  sadrzajList = item.getSadrzaj();
                 List<String> tagsList = item.getTags();
 
                 String sadrzaj = "";

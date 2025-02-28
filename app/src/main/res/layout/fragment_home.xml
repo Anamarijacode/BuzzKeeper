@@ -38,16 +38,18 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="416dp"
-        android:layout_height="636dp"
+        android:layout_width="390dp"
+        android:layout_height="641dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="1dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.784" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

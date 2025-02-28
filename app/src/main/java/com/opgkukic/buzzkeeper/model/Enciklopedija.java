@@ -6,59 +6,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Enciklopedija {
-    private String authorId;
-    private int idEnciklopedija;
-    private String datumKreiranja;
+    private String idEnciklopedija;
     private String naslov;
-    private List<String> sadrzaj;
-    private String javno;
-    private List<String> literatura;
+    private String url;
     private List<String> tags;
+    private String sadrzaj;
 
-    public Enciklopedija() {
-        this.sadrzaj = new ArrayList<>();
-        this.literatura = new ArrayList<>();
-    }
-
-    public Enciklopedija(String authorId, int idEnciklopedija, String datumKreiranja, String naslov,
-                         List<String> sadrzaj, String javno, List<String> literatura, List<String> tags) {
-        this.authorId = authorId;
+    public Enciklopedija(String idEnciklopedija, String naslov, String url, List<String> tags, String sadrzaj) {
         this.idEnciklopedija = idEnciklopedija;
-        this.datumKreiranja = datumKreiranja;
         this.naslov = naslov;
-        this.sadrzaj = (sadrzaj != null) ? sadrzaj : new ArrayList<>();
-        this.javno = javno;
-        this.literatura = (literatura != null) ? literatura : new ArrayList<>();
-        this.tags = (tags != null) ? tags : new ArrayList<>();
+        this.url = url;
+        this.tags = tags;
+        this.sadrzaj = sadrzaj;
     }
-    public Enciklopedija(String naslov, List<String> sadrzaj, List<String> tags) {
+
+    public Enciklopedija(String idEnciklopedija) {
+        this.idEnciklopedija = idEnciklopedija;
+    }
+
+    public Enciklopedija(String idEnciklopedija,String naslov, List<String> tags, String sadrzaj) {
+        this.idEnciklopedija= idEnciklopedija;
         this.naslov = naslov;
-        this.sadrzaj = (sadrzaj != null) ? sadrzaj : new ArrayList<>();
-        this.tags = (tags != null) ? tags : new ArrayList<>();
+        this.tags = tags;
+        this.sadrzaj = sadrzaj;
     }
 
-    public String getAuthorId() {
-        return authorId;
-    }
 
-    public void setAuthorId(String authorId) {
-        this.authorId = authorId;
-    }
-
-    public int getIdEnciklopedija() {
+    public String getIdEnciklopedija() {
         return idEnciklopedija;
     }
 
-    public void setIdEnciklopedija(int idEnciklopedija) {
+    public void setIdEnciklopedija(String idEnciklopedija) {
         this.idEnciklopedija = idEnciklopedija;
-    }
-
-    public String getDatumKreiranja() {
-        return datumKreiranja;
-    }
-
-    public void setDatumKreiranja(String datumKreiranja) {
-        this.datumKreiranja = datumKreiranja;
     }
 
     public String getNaslov() {
@@ -69,28 +48,12 @@ public class Enciklopedija {
         this.naslov = naslov;
     }
 
-    public List<String> getSadrzaj() {
-        return (sadrzaj != null) ? sadrzaj : new ArrayList<>(); // Prevent null
+    public String getUrl() {
+        return url;
     }
 
-    public void setSadrzaj(List<String> sadrzaj) {
-        this.sadrzaj = (sadrzaj != null) ? sadrzaj : new ArrayList<>();
-    }
-
-    public String getJavno() {
-        return javno;
-    }
-
-    public void setJavno(String javno) {
-        this.javno = javno;
-    }
-
-    public List<String> getLiteratura() {
-        return (literatura != null) ? literatura : new ArrayList<>();
-    }
-
-    public void setLiteratura(List<String> literatura) {
-        this.literatura = (literatura != null) ? literatura : new ArrayList<>();
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public List<String> getTags() {
@@ -99,5 +62,13 @@ public class Enciklopedija {
 
     public void setTags(List<String> tags) {
         this.tags = tags;
+    }
+
+    public String getSadrzaj() {
+        return sadrzaj;
+    }
+
+    public void setSadrzaj(String sadrzaj) {
+        this.sadrzaj = sadrzaj;
     }
 }
